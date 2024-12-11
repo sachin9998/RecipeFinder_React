@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Sidebar = () => {
   return (
     <>
@@ -17,6 +19,12 @@ const DesktopSidebar = () => {
           <img src="./logo.svg" alt="Logo" className="hidden md:block" />
           <img src="./mobile-logo.svg" alt="Logo" className="block md:hidden" />
         </div>
+        <ul className="flex flex-col items-center md:items-start gap-8">
+            <Link to={"/"}>
+                <span className="font-bold hidden md:block "></span>
+            </Link>
+            <Link to={"/favorites"}>Favorites</Link>
+        </ul>
       </div>
     </div>
   );
