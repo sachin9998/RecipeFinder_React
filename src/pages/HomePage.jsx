@@ -58,7 +58,10 @@ const HomePage = () => {
               className="text-sm md:text-md grow"
               placeholder="What do you want to cook today?"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setRecipes([]);
+              }}
             />
           </label>
         </form>
@@ -72,15 +75,31 @@ const HomePage = () => {
         </p>
 
         {/* Display Loader or Error */}
-        {loading && (
+
+        {/* {loading && (
           <div className="flex justify-center items-center h-[50vh]">
             <Loader />
           </div>
-        )}
-        {error && <p className="text-red-500">{error}</p>}
+        )} */}
+
+        {/* {error && <p className="text-red-500">{error}</p>} */}
 
         {/* Display Recipes */}
         <div className="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {loading &&
+            [...Array(9)].map((_, index) => (
+              <div key={index} className="flex flex-col gap-4 w-full">
+                <div className="skeleton h-32 w-full"></div>
+
+                <div className="flex justify-between">
+                  <div className="skeleton h-4 w-28"></div>
+                  <div className="skeleton h-4 w-24"></div>
+                </div>
+
+                <div className="skeleton h-4 w-1/2"></div>
+              </div>
+            ))}
+
           {recipes.length > 0
             ? recipes.map((recipe) => (
                 <RecipeCard key={recipe.idMeal} recipe={recipe} />

@@ -11,7 +11,7 @@ const RecipeCard = ({ recipe }) => {
         />
 
         <div className="absolute bottom-2 left-2 bg-white rounded-full p-1 cursor-pointer flex items-center gap-1 text-sm">
-          <Soup size={16} /> 4 Serving
+          <Soup size={16} /> {recipe.strArea}
         </div>
 
         <div className="absolute top-1 right-2 bg-white rounded-full p-1 cursor-pointer">
@@ -23,7 +23,9 @@ const RecipeCard = ({ recipe }) => {
         <p className="font-bold tracking-wide">{recipe.strMeal}</p>
       </div>
 
-      <p className="my-2 ">Turkish Kitchen</p>
+      <p className="my-2 ">
+        {recipe.strInstructions.substring(0, 100)} <span className="font-bold">Read More...</span>
+      </p>
 
       <div className="flex gap-2 mt-auto">
         <div className="flex gap-1 bg-[#d6f497] items-center p-1 rounded-md">
