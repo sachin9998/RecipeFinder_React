@@ -1,5 +1,7 @@
+import RecipeCard from "../components/RecipeCard"
+
 const FavouritePage = () => {
-  const fav = false;
+  const fav = true;
 
   return (
     <div className="bg-[#faf9fb] flex-1 p-10 min-h-screen">
@@ -11,6 +13,19 @@ const FavouritePage = () => {
             <img className="h-3/4 " src="./404.svg" alt="No Favorites found" />
           </div>
         )}
+
+        {
+          fav && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+              <RecipeCard/>
+              <RecipeCard/>
+              <RecipeCard/>
+              <RecipeCard/>
+              <RecipeCard/>
+            </div>
+          )
+        }
+
       </div>
     </div>
   );
