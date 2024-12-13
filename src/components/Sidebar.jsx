@@ -28,7 +28,7 @@ const DesktopSidebar = () => {
 
           <Link className="flex gap-1" to={"/favorites"}>
             <Heart size={24} />
-            <span className="font-bold hidden md:block ">Favourites</span>
+            <span className="font-bold hidden md:block ">Favorites</span>
           </Link>
         </ul>
       </div>
