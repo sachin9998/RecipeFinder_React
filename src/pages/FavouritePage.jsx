@@ -3,6 +3,8 @@ import RecipeCard from "../components/RecipeCard"
 const FavouritePage = () => {
   const fav = true;
 
+  
+
   return (
     <div className="bg-[#faf9fb] flex-1 p-10 min-h-screen">
       <div className="max-w-screen-lg mx-auto ">

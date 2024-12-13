@@ -1,12 +1,12 @@
-import { Heart, HeartPulse, Soup } from "lucide-react";
+import { ShoppingBasket, ShoppingBag, Heart, Soup } from "lucide-react";
 
-const RecipeCard = () => {
+const RecipeCard = ({ recipe }) => {
   return (
     <div className="flex flex-col rounded-md bg-[#ecf7d4] overflow-hidden p-3 relative">
-      <a href="#" className="relative h-32 ">
+      <a href={recipe.strYoutube} target="_blank" className="relative h-32 ">
         <img
           className="rounded-md w-full h-full object-cover cursor-pointer"
-          src="./1.jpg"
+          src={recipe.strMealThumb}
           alt="recipe image"
         />
 
@@ -20,22 +20,22 @@ const RecipeCard = () => {
       </a>
 
       <div className="flex mt-1">
-        <p className="font-bold tracking-wide">Roasted Chicken</p>
+        <p className="font-bold tracking-wide">{recipe.strMeal}</p>
       </div>
 
       <p className="my-2 ">Turkish Kitchen</p>
 
       <div className="flex gap-2 mt-auto">
         <div className="flex gap-1 bg-[#d6f497] items-center p-1 rounded-md">
-          <HeartPulse size={16} />{" "}
+          <ShoppingBag size={16} />{" "}
           <span className="text-sm tracking-tighter font-semibold">
-            Gluten-free
+            {recipe.strIngredient1}
           </span>
         </div>
         <div className="flex gap-1 bg-[#d6f497] items-center p-1 rounded-md">
-          <HeartPulse size={16} />{" "}
+          <ShoppingBasket size={16} />
           <span className="text-sm tracking-tighter font-semibold">
-            Heart-healthy
+            {recipe.strIngredient2}
           </span>
         </div>
       </div>
