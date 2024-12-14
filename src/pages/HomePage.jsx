@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import RecipeCard from "../components/RecipeCard";
-import Loader from "../components/Loader";
+import { getRandomColor } from "../lib/utils";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -102,7 +102,7 @@ const HomePage = () => {
 
           {recipes.length > 0
             ? recipes.map((recipe) => (
-                <RecipeCard key={recipe.idMeal} recipe={recipe} />
+                <RecipeCard key={recipe.idMeal} recipe={recipe} {...getRandomColor()} />
               ))
             : !loading && <p>No recipes found. Try a different query.</p>}
         </div>

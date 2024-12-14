@@ -1,4 +1,3 @@
 # React + Vite
 
-- API used - [API Ninjas - Recipe API](https://www.api-ninjas.com/api/recipe)
-
+- API used - [TheMeal DB](https://www.themealdb.com/api.php)
